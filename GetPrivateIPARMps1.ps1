@@ -1,0 +1,1 @@
+﻿Get-AzureRmNetworkInterface -ResourceGroupName "ATCC1972-vmrg" | ForEach { $Interface = $_.Name; $IPs = $_ | Get-AzureRmNetworkInterfaceIpConfig | Select PrivateIPAddress; Write-Host $Interface $IPs.PrivateIPAddress } | out-file C:\Azure\ATCCv2PrivIP.xls
